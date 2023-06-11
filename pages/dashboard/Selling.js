@@ -8,7 +8,7 @@ import { useUserContext } from "../../context/userContext.js";
 // export const getStaticPaths = async () => {
 // 	const { isLoading, products } = useProductContext();
 // 	const res = await fetch(
-// 		`http://localhost:8000/products?name=${products.user.name}`
+// 		`https://infinity-maeo.onrender.com/products?name=${products.user.name}`
 // 	);
 // 	const data = await res.json();
 
@@ -17,19 +17,19 @@ import { useUserContext } from "../../context/userContext.js";
 // 	};
 // };
 const Selling = () => {
-	//http://localhost:8000/products?name=anas
+	//https://infinity-maeo.onrender.com/products?name=anas
 	const [userData, setuserData] = useState(null);
 	const { isLoading, products } = useProductContext();
 	const { user } = useUserContext();
 	useEffect(() => {
-		fetch(`http://localhost:8000/products?name=${user?.name}`)
+		fetch(`https://infinity-maeo.onrender.com/products?name=${user?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);
 	const handleDeleteUser = (id) => {
 		const proceed = window.confirm("Are you sure, you want to delete?");
 		if (proceed) {
-			const url = `http://localhost:8000/products/${id}`;
+			const url = `https://infinity-maeo.onrender.com/products/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})

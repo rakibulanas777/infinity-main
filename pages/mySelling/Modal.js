@@ -32,7 +32,7 @@ const Modal = ({ title, id }) => {
 		// TODO: send data to the server
 		// and once data is saved then close the modal
 		// and display success toast
-		fetch("http://localhost:8000/products", {
+		fetch("https://infinity-maeo.onrender.com/products", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -74,7 +74,7 @@ const Modal = ({ title, id }) => {
 		// TODO: send data to the server
 		// and once data is saved then close the modal
 		// and display success toast
-		fetch(`http://localhost:8000/products/${id}`, {
+		fetch(`https://infinity-maeo.onrender.com/products/${id}`, {
 			method: "PUT",
 			headers: {
 				"content-type": "application/json",

@@ -8,7 +8,7 @@ import { useProductContext } from "../../context/productcontext";
 import PageNavigation from "../../components/PageNavigation";
 import { useCartContext } from "../../context/cart_context";
 
-const API = "http://localhost:8000/products";
+const API = "https://infinity-maeo.onrender.com/products";
 export const getStaticPaths = async () => {
 	const res = await fetch(API);
 	const data = await res.json();
@@ -28,7 +28,7 @@ export async function getStaticProps(context) {
 	const catagory = context.params.catagory;
 
 	const res = await fetch(
-		`http://localhost:8000/products?catagory=${catagory}`
+		`https://infinity-maeo.onrender.com/products?catagory=${catagory}`
 	);
 	const product = await res.json();
 	return {

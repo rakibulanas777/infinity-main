@@ -9,7 +9,7 @@ import axios from "axios";
 import reducer from "../reducer/productReducer";
 const AppContext = createContext();
 
-const API = "http://localhost:8000/products";
+const API = "https://infinity-maeo.onrender.com/products";
 
 const initialState = {
 	isLoading: false,

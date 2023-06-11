@@ -23,7 +23,7 @@ import Offer from "../components/Offer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const API = "http://localhost:8000/products";
+const API = "https://infinity-maeo.onrender.com/products";
 
 export async function getStaticProps() {
 	const res = await fetch(API);

@@ -12,7 +12,7 @@ import { useUserContext } from "../../context/userContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API = "http://localhost:8000/products";
+const API = "https://infinity-maeo.onrender.com/products";
 
 export const getStaticPaths = async () => {
 	const res = await fetch(API);
@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 export async function getStaticProps(context) {
 	const id = context.params._id;
 	console.log(id);
-	const res = await fetch(`http://localhost:8000/products/${id}`);
+	const res = await fetch(`https://infinity-maeo.onrender.com/products/${id}`);
 	const product = await res.json();
 	return {
 		props: {
@@ -80,7 +80,7 @@ const featureDetails = ({ product }) => {
 		console.log(product)
 		const bidsData = { price,bids,cuser,product };
 		console.log(bidsData);
-		fetch("http://localhost:8000/bids", {
+		fetch("https://infinity-maeo.onrender.com/bids", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

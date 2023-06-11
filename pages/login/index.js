@@ -20,7 +20,7 @@ const LogIn = () => {
 		console.log(loginData);
 
 		e.preventDefault();
-		fetch("http://localhost:8000/users/login", {
+		fetch("https://infinity-maeo.onrender.com/users/login", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
