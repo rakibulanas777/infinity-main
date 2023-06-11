@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useProductContext } from "../../context/productcontext";
+
 import { useUserContext } from "../../context/userContext";
 import Product from "./Product";
 
 const MyProduct = () => {
 	const [userData, setuserData] = useState(null);
-	const { isLoading, products } = useProductContext();
+
 	const { customer } = useUserContext();
+	console.log(customer)
 	useEffect(() => {
-		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.name}`)
+		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.data?.user?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);

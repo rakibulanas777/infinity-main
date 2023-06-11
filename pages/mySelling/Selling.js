@@ -21,7 +21,7 @@ const Selling = () => {
 	const { isLoading, products } = useProductContext();
 	const { customer } = useUserContext();
 	useEffect(() => {
-		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.name}`)
+		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.data?.user?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);

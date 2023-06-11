@@ -26,7 +26,7 @@ const UserDetails = () => {
 								className="shadow-sm appearance-none border bg-white rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 								id="name"
 								type="name"
-								placeholder={user?.data?.user?.name}
+								placeholder={customer?.data?.user?.name}
 							/>
 						</div>
 						<div className="mb-2">
@@ -37,7 +37,7 @@ const UserDetails = () => {
 								className="shadow-sm appearance-none border bg-white rounded w-full py-2 px-3 text-gray-900 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 								id="email"
 								type="email"
-								placeholder={user?.data?.user?.email}
+								placeholder={customer?.data?.user?.email}
 								disabled
 							/>
 						</div>

@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillEye, AiOutlinePlus } from "react-icons/ai";
 import product from "../context/product";
-import { useProductContext } from "../context/productcontext";
+
 import Link from "next/link";
 import { MdOutlineFavorite } from "react-icons/md";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/userContext";
 import Product from "./product";
 
-const FeatureProducts = ({ title }) => {
-	const { isLoading, products } = useProductContext();
+const FeatureProducts = ({ title,products }) => {
+	
 
 	return (
 		<div className="feature-product">
