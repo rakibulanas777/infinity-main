@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import UserDetails from "../userAccount/UserDetails";
-import MyProduct from "./MyProduct";
+
 import Selling from "./Selling";
 
 const Useraccount = () => {

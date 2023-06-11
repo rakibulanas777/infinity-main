@@ -1,35 +1,21 @@
 import React, { useEffect, useState } from "react";
-import Product from "./Product.js";
 import { useProductContext } from "../../context/productcontext";
+import { useUserContext } from "../../context/userContext";
+import Product from "./Product";
 
-import Modal from "./Modal";
-import { useUserContext } from "../../context/userContext.js";
-
-// export const getStaticPaths = async () => {
-// 	const { isLoading, products } = useProductContext();
-// 	const res = await fetch(
-// 		`http://localhost:8000/products?name=${products.user.name}`
-// 	);
-// 	const data = await res.json();
-
-// 	return {
-// 		data,
-// 	};
-// };
-const Selling = () => {
-	//http://localhost:8000/products?name=anas
+const MyProduct = () => {
 	const [userData, setuserData] = useState(null);
 	const { isLoading, products } = useProductContext();
-	const { user } = useUserContext();
+	const { customer } = useUserContext();
 	useEffect(() => {
-		fetch(`http://localhost:8000/products?name=${user?.name}`)
+		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);
 	const handleDeleteUser = (id) => {
 		const proceed = window.confirm("Are you sure, you want to delete?");
 		if (proceed) {
-			const url = `http://localhost:8000/products/${id}`;
+			const url = `https://infinity-maeo.onrender.com/products/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})
@@ -43,9 +29,10 @@ const Selling = () => {
 				});
 		}
 	};
+	console.log(userData);
 	return (
-		<div className=" text-black bg-gray-100 p-5 text-center">
-			{/* {userData ? (
+		<div>
+			{userData ? (
 				<>
 					<div className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mb-4">
 						{userData.map((curElem) => {
@@ -68,19 +55,9 @@ const Selling = () => {
 						Post unused items - countless buyers are looking forward to it!
 					</div>
 				</div>
-			)} */}
-
-			{/* The button to open modal */}
-			{/* <label
-				htmlFor="booking-modal"
-				className="btn text-white hover:bg-red-600 hover:border-red-600 border-red-500 bg-red-500"
-			>
-				Add products
-			</label> */}
-
-			<Modal title="Add products" />
+			)}
 		</div>
 	);
 };
 
-export default Selling;
+export default MyProduct;

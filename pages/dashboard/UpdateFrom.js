@@ -1,7 +1,7 @@
 import React from "react";
 import data from "../../components/data";
 const UpdateFrom = ({ handleUpdateProduct, title }) => {
-
+	const { products } = data;
 	return (
 		<form
 			className="grid grid-cols-1 gap-3 mt-10"
