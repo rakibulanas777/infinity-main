@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Product from "./Product.js";
 import { useProductContext } from "../../context/productcontext";
 
 import Modal from "./Modal";

@@ -2,8 +2,8 @@ import React from "react";
 import { useUserContext } from "../../context/userContext";
 
 const UserDetails = () => {
-	const { user } = useUserContext();
-	console.log(user);
+	const { customer } = useUserContext();
+	console.log(customer);
 	return (
 		<div className="bg-gray-100 text-black p-5">
 			<div className="grid grid-cols-1">
