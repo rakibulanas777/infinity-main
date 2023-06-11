@@ -6,9 +6,9 @@ import Product from "./Product";
 const MyProduct = () => {
 	const [userData, setuserData] = useState(null);
 	const { isLoading, products } = useProductContext();
-	const { user } = useUserContext();
+	const { customer } = useUserContext();
 	useEffect(() => {
-		fetch(`https://infinity-maeo.onrender.com/products?name=${user?.name}`)
+		fetch(`https://infinity-maeo.onrender.com/products?name=${customer?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);

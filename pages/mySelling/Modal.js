@@ -6,7 +6,7 @@ import data from "../../components/data";
 import AddFrom from "./AddFrom";
 import UpdateFrom from "./UpdateFrom";
 const Modal = ({ title, id }) => {
-	const { user } = useUserContext();
+	const { customer } = useUserContext();
 	const { products } = data;
 	const handleProduct = (event) => {
 		event.preventDefault();
@@ -19,7 +19,7 @@ const Modal = ({ title, id }) => {
 		const description = form.description.value;
 
 		const product = {
-			user: user,
+			user: customer,
 			name,
 			company,
 			price,
@@ -61,7 +61,7 @@ const Modal = ({ title, id }) => {
 		const description = form.description.value;
 
 		const product = {
-			user: user,
+			user: customer,
 			name,
 			company,
 			price,

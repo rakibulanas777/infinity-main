@@ -20,9 +20,9 @@ const Selling = () => {
 	//http://localhost:8000/products?name=anas
 	const [userData, setuserData] = useState(null);
 	const { isLoading, products } = useProductContext();
-	const { user } = useUserContext();
+	const { customer } = useUserContext();
 	useEffect(() => {
-		fetch(`http://localhost:8000/products?name=${user?.name}`)
+		fetch(`http://localhost:8000/products?name=${customer?.name}`)
 			.then((res) => res.json())
 			.then((data) => setuserData(data));
 	}, []);
